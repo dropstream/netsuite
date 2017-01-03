@@ -21,7 +21,7 @@ module NetSuite
         read_timeout: read_timeout,
         open_timeout: open_timeout,
         namespaces: namespaces,
-        soap_header: auth_header(credentials).update(soap_header),
+        soap_header: auth_header(credentials).merge(soap_header),
         pretty_print_xml: true,
         filters: filters,
         logger: logger,
@@ -185,6 +185,18 @@ module NetSuite
         token_auth(credentials)
       else
         user_auth(credentials)
+      end.merge(application_info_header(credentials))
+    end
+
+    def application_info_header(credentials={})
+      if credentials[:application_id].blank?
+        {}
+      else
+        {
+          'platformMsgs:ApplicationInfo' => {
+            'platformMsgs:applicationId' => credentials[:application_id]
+          }
+        }
       end
     end
 
