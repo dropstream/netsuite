@@ -6,8 +6,8 @@ module NetSuite
       include Namespaces::TranSales
 
       fields :additional_handling_ups, :cod_amount_ups, :cod_method_ups, :delivery_conf_ups, :insured_value_ups, :package_descr_ups,
-        :package_height_ups, :insured_value_ups, :package_descr_ups, :package_height_ups, :package_length_ups, :package_tracking_number_ups,
-        :package_weight_ups, :package_width_ups, :packaging_ups, :reference1_ups, :reference2_ups, :use_cod_ups, :use_cod_ups
+        :package_height_ups, :package_length_ups, :package_tracking_number_ups, :package_weight_ups, :package_width_ups,
+        :packaging_ups, :reference1_ups, :reference2_ups, :use_cod_ups
 
 
       def initialize(attributes_or_record = {})

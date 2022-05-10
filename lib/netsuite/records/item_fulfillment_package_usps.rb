@@ -6,7 +6,7 @@ module NetSuite
       include Namespaces::TranSales
 
       fields :insured_value_usps, :package_descr_usps, :package_height_usps, :package_length_usps,
-              :package_tracking_number_usps, :package_weight_usps, :package_width_usps, :reference1_usps, :reference2_usps, :useInsured_value_usps
+              :package_tracking_number_usps, :package_weight_usps, :package_width_usps, :reference1_usps, :reference2_usps, :use_insured_value_usps
 
 
       def initialize(attributes_or_record = {})
