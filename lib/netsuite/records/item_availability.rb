@@ -16,16 +16,7 @@ module NetSuite
       field :quantity_committed
       field :quantity_available
 
-      def initialize(attributes = {})
-        initialize_from_attributes_hash(attributes)
-      end
-
-      def self.get_for_inventory_items(items, credentials={})
-        ref_list = NetSuite::Records::RecordRefList.new(
-          record_ref: items.map do |item|
-            {internal_id: item.internal_id}
-          end
-        )
+      def self.get_item_availability(ref_list, credentials={})
         connection = NetSuite::Configuration.connection({}, credentials)
         response = connection.call :get_item_availability, message: {
           "platformMsgs:itemAvailabilityFilter" => {
@@ -45,6 +36,10 @@ module NetSuite
         else
           []
         end
+      end
+
+      def initialize(attributes = {})
+        initialize_from_attributes_hash(attributes)
       end
     end
   end
