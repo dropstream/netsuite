@@ -7,7 +7,7 @@ module NetSuite
       include Namespaces::TranPurch
 
       fields :amount, :description, :expected_receipt_date, :gross_amt, :is_billable,
-             :is_closed, :line, :match_bill_to_receipt, :quantity, :quantity_available,
+             :is_closed, :line, :match_bill_to_receipt, :order_line, :quantity, :quantity_available,
              :quantity_billed, :quantity_on_hand, :quantity_received, :rate, :serial_numbers,
              :tax1_amt, :tax_rate1, :tax_rate2, :vendor_name
 
