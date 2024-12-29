@@ -206,7 +206,7 @@ module NetSuite
         'SL' => '_sierraLeone',
         'SG' => '_singapore',
         'SX' => '_sintMaartenDutchPart',
-        'SK' => '_slovakRepublic',
+        'SK' => '_slovakia',
         'SI' => '_slovenia',
         'SB' => '_solomonIslands',
         'SO' => '_somalia',
